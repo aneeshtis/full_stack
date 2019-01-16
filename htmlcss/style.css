@@ -1,0 +1,11 @@
+.regBody, homeBody{
+    background: #0086bb;
+}
+table{
+    background: rgb(0, 204, 255);
+    border: 1px solid;
+}
+.btn{
+    background: #62477c;
+    color: #fff;
+}
