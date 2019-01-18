@@ -9,7 +9,17 @@
     <script>
             function getData(){
                 var getName = document.getElementById('name').value;
-                alert(getName);
+                var getAdmn = document.getElementById('adno').value;
+                var getMob = document.getElementById('mob').value;
+                var getAge = document.getElementById('age').value;
+                var getDob = document.getElementById('dob').value;
+                var getEmail = document.getElementById('email').value;
+                var getPlace = document.getElementById('place').value;
+                var getUname = document.getElementById('uname').value;
+                var getPass = document.getElementById('pass').value;
+                var getCpass = document.getElementById('cpass').value;
+                var getDistrict = document.getElementById('district').value;
+                document.getElementById('res').innerHTML = getName;
             }
     </script>
 </head>
@@ -22,7 +32,7 @@
             <table class="table">
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" id="name" /></td>
+                    <td><input type="text" id="name" required/></td>
                 </tr>
                 <tr>
                     <td>Admission Number</td>
@@ -30,7 +40,7 @@
                 </tr>
                 <tr>
                     <td>Roll Number</td>
-                    <td><input type="text" id="rono"  /></td>
+                    <td><input type="text" id="mob" pattern="[6789]{1}[0-9]{9}"  required/></td>
                 </tr>
                 <tr>
                     <td>Age</td>
@@ -38,7 +48,7 @@
                 </tr>
                 <tr>
                     <td>DOB</td>
-                    <td><input type="date" id="dt" /></td>
+                    <td><input type="date" id="dob" /></td>
                 </tr>
                 <tr>
                     <td>Address</td>
@@ -54,7 +64,7 @@
                 <tr>
                     <td>District</td>
                     <td>
-                    	<select>
+                    	<select id="district">
                     		<option value="alp">Alappuzha</option>
                     		<option value="klm">Kollam</option>
                     		<option value="tvm">Trivandrum</option>
@@ -87,8 +97,8 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><button type="button" onclick="getData();" class="btn btn-primary">Register</button></td>
+                    <td><p id="res"></p></td>
+                    <td><button type="submit" onclick="getData();" class="btn btn-primary">Register</button></td>
                 </tr> 
         </table>
         </form>
