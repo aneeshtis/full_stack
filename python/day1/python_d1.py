@@ -121,9 +121,21 @@ for value in "String":
     print(value)
 print("The End")
 
-#functions
+#functions 1
 def printMe(arg):
     print(arg)
     return
 printMe("1st call!!")
 printMe("2nd call!!")
+
+#function 2
+def printme(a,b):
+    c=a*b
+    c1=a+b
+    c2=a-b
+    return[c,c1,c2,(c,c1,c2)]
+x=int(input("Enter first element"))
+y=int(input("Enter second element"))
+z=printme(x,y)
+print("Outside...",z)
+print(type(z))
