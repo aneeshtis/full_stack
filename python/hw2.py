@@ -12,6 +12,6 @@ class csvDer(csvBase):
         print(df.Name)
 #end csvDer
 
-obj = csvDer()
-obj.getName(obj.df)
+drc = csvDer()
+drc.getName(drc.df)
     
