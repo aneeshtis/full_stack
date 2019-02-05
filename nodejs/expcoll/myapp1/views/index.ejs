@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ul>
+      <li><a href="/addbook">Add Book</a></li>
+      <li><a href="/viewbook">View Books</a></li>
+      <li><a href="/bookupdate">Edit Book</a></li>
+      <li><a href="/listbook">Remove Book</a></li>
+  </ul>
+  <table border="2">
+    <tr>
+        <th>Sl no</th>
+        <th>name</th>
+        <th>Salary</th>
+    </tr>
+    
+    <% 
+        if(data.length){
+            for(var i = 0; i < data.length; i++){ %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].salary %></td>
+            </tr>
+    <%      } 
+        }else{ %>
+            <p>No Data Found</p>
+    <% } %>
+    </table>
+  </body>
+</html>

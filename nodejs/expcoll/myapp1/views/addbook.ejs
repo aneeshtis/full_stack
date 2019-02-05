@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Add Book</h1><hr>>
+        <form action="/insert" method="POST">
+            Book Id: <input type="text" name="txt_id" /><br>
+            Book Name:<input type="text" name="txt_name" /><br>
+            Author:<input type="text" name="txt_author" /><br>
+            Publisher:<input type="text" name="txt_publisher" /><br>
+            Price:<input type="text" name="txt_price" /><br>
+            Description:<input type="text" name="txt_description" /><br>
+
+            <input type="submit" name="Submit" /><br>
+        </form>
+
+  </body>
+</html>

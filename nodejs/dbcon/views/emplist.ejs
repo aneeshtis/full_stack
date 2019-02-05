@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/empupdated" method="POST" >
+        Eid: <input type="text" name="txt_eid" value="<%=data[0].eid %>"/><br/>
+        Name: <input type="text" name="txt_name" value="<%=data[0].name %>" /><br/>
+        Department: <input type="text" name="txt_dep" value="<%=data[0].dep %>" /><br/>
+        Salary: <input type="text" name="txt_salary" value="<%=data[0].salary %>" /><br/>
+        Location: <input type="text" name="txt_loc" value="<%=data[0].loc %>" /><br/>
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>
