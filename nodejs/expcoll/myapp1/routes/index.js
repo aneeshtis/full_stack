@@ -1,9 +1,28 @@
 var express = require('express');
 var router = express.Router();
 
+var mongodb = require("mongodb");
+var MongoClient = mongodb.MongoClient;
+var url = "mongodb://127.0.0.1:27017/testdb";
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  MongoClient.connect(url,function(err,database){
+    if(err){
+        res.send("Something Went Wrong!!");
+    }
+    else{
+        var dtb = database.db('testdb');
+        var empcol = dtb.collection('books');
+        empcol.find().toArray(function(err,tbdata){
+            if(err){
+                res.send("Something Went Wrong!!");
+            }else{
+                res.render('index', {data:tbdata});
+            }
+        })
+    }
+})
 });
 
 router.get('/addbook', function(req, res, next) {

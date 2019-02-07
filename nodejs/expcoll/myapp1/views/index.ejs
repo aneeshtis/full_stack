@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Books</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Books</h1>
+    <p>Welcome to </p>
     <ul>
       <li><a href="/addbook">Add Book</a></li>
-      <li><a href="/viewbook">View Books</a></li>
       <li><a href="/bookupdate">Edit Book</a></li>
       <li><a href="/listbook">Remove Book</a></li>
   </ul>
-  <table border="2">
+  
+
+  <table class="table table-hover">
     <tr>
         <th>Sl no</th>
-        <th>name</th>
-        <th>Salary</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>author</th>
+        <th>Publisher</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Image</th>
     </tr>
-    
     <% 
         if(data.length){
             for(var i = 0; i < data.length; i++){ %>
             <tr>
                 <td><%= i+1 %></td>
+                <td><%= data[i].id %></td>
                 <td><%= data[i].name %></td>
-                <td><%= data[i].salary %></td>
+                <td><%= data[i].author %></td>
+                <td><%= data[i].publisher %></td>
+                <td><%= data[i].price %></td>
+                <td><%= data[i].description %></td>
+                <td><img src="images/1.jpg" width="300"  height="200"/></td>
             </tr>
     <%      } 
         }else{ %>
             <p>No Data Found</p>
     <% } %>
     </table>
+
   </body>
 </html>

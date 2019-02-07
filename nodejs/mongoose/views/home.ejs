@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mangoose</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+    <h1>Mongoose Sample <%= data1 %></h1>
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Insert Data</h5>
+            <form action="/insert" method="post">
+                <div class="form-group">
+                    Id: <input type="text" class="form-control" name="txt_id" required /><br>
+                    Name: <input type="text" class="form-control" name="txt_name" required  /><br>
+                    Author: <input type="text" class="form-control" name="txt_author" required /><br>
+                    <input type="submit" class="btn btn-success" value="Insert" />
+                </div>
+            </form><br>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Delete Data</h5>
+            <form action="/delete" method="post">
+                <div class="form-group">
+                    Id: <input type="text" class="form-control" name="txt_id" required /><br>
+                    <input type="submit" class="btn btn-success" value="Delete" />
+                </div>
+            </form><br>
+        </div>
+
+        <div class="col-md-3">
+                <h5>Update Data</h5>
+            <form action="/update" method="post">
+                <div class="form-group">
+                    Id: <input type="text" class="form-control" name="txt_id" required /><br>
+                    <input class="btn btn-success" type="submit" value="Update" /><br>
+                </div>
+            </form><br>
+        </div>
+
+        <div class="col-md-5">
+            <h5>View Data</h5>
+            <form action="/view" method="post">
+                <div class="form-group">
+                    Id: <input type="input" class="form-control" name="txt_id" /><br>
+                    <input type="submit" class="btn btn-success" value="View" />
+                </div>
+            </form><br>
+                
+            <table class="table table-hover">
+                <tr>
+                    <th>Sl no</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            <% 
+            if(data.length){
+                for(var i = 0; i < data.length; i++){ %>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= data[i].id %></td>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].author %></td>
+                    <td><%= data[i].publisher %></td>
+                    <td><%= data[i].price %></td>
+                    <td><%= data[i].description %></td>
+                </tr>
+            <%      } 
+                }else{ %>
+                    <p>No Data Found</p>
+            <% } %>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/upload" method="POST" enctype="multipart/form-data" />
+                <input type="file" name="img" /> 
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
