@@ -1,4 +1,5 @@
-
+{% extends "layout.html" %}
+{% block content %}
     <section class="py-5">
             <div class="container">
                 <div class="page-header"><h1>About</h1></div>
@@ -17,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="./img/blockchain.jpg" class="rounded" width="50%">
+                        <img src="../static/img/blockchain.jpg" class="rounded" width="50%">
                     </div>
                     <h4>Blockchain</h4>
                     <p>
@@ -26,7 +27,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="./img/moodle.png" class="rounded" width="50%">
+                        <img src="../static/img/moodle.png" class="rounded" width="50%">
                     </div>
                     <h4>Moodle</h4>
                     <p>
@@ -35,7 +36,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="./img/science.jpg" class="rounded" width="50%">
+                        <img src="../static/img/science.jpg" class="rounded" width="50%">
                     </div>
                     <h4>Data Science Anslysis</h4>
                     <p>
@@ -48,7 +49,7 @@
             <div class="row">
                  <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="./img/r.png" class="rounded" width="50%">
+                        <img src="../static/img/r.png" class="rounded" width="50%">
                     </div>
                     <h4>R Programming</h4>
                     <p>
@@ -57,7 +58,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="./img/faculty.jpg" class="rounded" width="50%">
+                        <img src="../static/img/faculty.jpg" class="rounded" width="50%">
                     </div>
                     <h4>Faculty Management</h4>
                     <p>
@@ -66,7 +67,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="./img/it.jpg" class="rounded" width="50%">
+                        <img src="../static/img/it.jpg" class="rounded" width="50%">
                     </div>
                     <h4>It Training</h4>
                     <p>
@@ -78,3 +79,4 @@
         <div class="text-center">
             <button type="button" onclick="getService();" class="btn btn-outline-info">More Service</button>
         </div><br><br>
+{% endblock %}

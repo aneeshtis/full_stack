@@ -1,5 +1,5 @@
 function getService(){
-    location.href = "./services.html";
+    location.href = "/service/";
 }
 
 function register(){
@@ -70,10 +70,10 @@ function register(){
 
     if(pwd.match(/(?=.*\d)(?=.*[a-z]).{6,}/) && pwd.trim() != ''){
     }else{
-        alert("Must contain at least one number and one lowercase letter, and at least 6 or more characters!!");
+        alert("Password must contain at least one number and one lowercase letter, and at least 6 or more characters!!");
         return;
     }
 
     alert("Thanks For Registering With Us!!");
-    location.href = "./services.html";
+    location.href = "/service/";
 }
