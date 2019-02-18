@@ -1,0 +1,145 @@
+C:\Users\Administrator>mkdir ict
+
+C:\Users\Administrator>cd
+C:\Users\Administrator
+
+C:\Users\Administrator>cd ict
+
+C:\Users\Administrator\ict>echo "# full_stack" >> README.md
+
+C:\Users\Administrator\ict>git init
+Initialized empty Git repository in C:/Users/Administrator/ict/.git/
+
+C:\Users\Administrator\ict>git add README.md
+
+C:\Users\Administrator\ict>git commit -m "first commit"
+[master (root-commit) 0c784d8] first commit
+ Committer: unknown <Administrator@Asiet-Lab.ASIETDomain.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+C:\Users\Administrator\ict>git remote add origin https://github.com/aneeshtis/full_stack.git
+
+C:\Users\Administrator\ict>git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 247 bytes | 247.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/aneeshtis/full_stack.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\Administrator\ict>mkdir htmlcss
+
+C:\Users\Administrator\ict>cd htmlcss
+
+C:\Users\Administrator\ict\htmlcss>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (htmlcss)
+version: (1.0.0)
+description: Html and css basics
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: aneesh
+license: (ISC)
+About to write to C:\Users\Administrator\ict\htmlcss\package.json:
+
+{
+  "name": "htmlcss",
+  "version": "1.0.0",
+  "description": "Html and css basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aneesh",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+
+C:\Users\Administrator\ict\htmlcss>code .
+
+C:\Users\Administrator\ict\htmlcss>cd ..
+
+C:\Users\Administrator\ict>git add .
+warning: LF will be replaced by CRLF in htmlcss/package.json.
+The file will have its original line endings in your working directory
+
+C:\Users\Administrator\ict>git commit -m "html css pjt created"
+[master 19ce419] html css pjt created
+ Committer: unknown <Administrator@Asiet-Lab.ASIETDomain.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 11 insertions(+)
+ create mode 100644 htmlcss/package.json
+
+C:\Users\Administrator\ict>git push -u orgin master
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\Administrator\ict>git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 508 bytes | 508.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/aneeshtis/full_stack.git
+   0c784d8..19ce419  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\Administrator\ict>cd htmlcss
+
+C:\Users\Administrator\ict\htmlcss>npm install -g http-server
+C:\Users\Administrator\AppData\Roaming\npm\http-server -> C:\Users\Administrator\AppData\Roaming\npm\node_modules\http-server\bin\http-server
+C:\Users\Administrator\AppData\Roaming\npm\hs -> C:\Users\Administrator\AppData\Roaming\npm\node_modules\http-server\bin\http-server
++ http-server@0.11.1
+added 25 packages from 28 contributors in 4.87s
+
+C:\Users\Administrator\ict\htmlcss>http-server -p 8080
+Starting up http-server, serving ./
+Available on:
+  http://10.0.9.129:8080
+  http://127.0.0.1:8080
+Hit CTRL-C to stop the server
+[Wed Jan 16 2019 07:03:31 GMT+0530 (India Standard Time)] "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[Wed Jan 16 2019 07:03:32 GMT+0530 (India Standard Time)] "GET /favicon.ico" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[Wed Jan 16 2019 07:03:32 GMT+0530 (India Standard Time)] "GET /favicon.ico" Error (404): "Not found"

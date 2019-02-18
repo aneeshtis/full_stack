@@ -1,0 +1,9 @@
+  addBook(){
+    let url = "http://localhost:3000/insert";
+    //let  toserv = {"id": "this.id", "name": "this.name", "author": "this.author", "publisher": "this.publisher", "price": 7000 };
+    let  toserv = {"id": this.id, "name": this.name, "author": this.author, "publisher": this.publisher, "price": this.price };
+    this.http.post(url,{bk:toserv}).subscribe(data=>{
+      console.log(data);
+      alert(data);
+    })
+  }

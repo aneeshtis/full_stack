@@ -1,0 +1,8 @@
+var port = express.env.PORT||3000;
+app.listen(port,function(req,res){
+	
+})
+
+
+npm install --save
+npm init

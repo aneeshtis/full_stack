@@ -1,0 +1,52 @@
+db.dropDatabase()		=>Drop the database
+db.createCollection(name)	=>Create a collection
+show collections		=>Shows Collections
+db.employee.insert({eid:"e001", name:"An1"})
+db.employee.insertMany([{eid:"e001", name:"An1"}, {eid:"e001", name:"An1"}])
+db.collection_name.find()
+db.collection_name.find().pretty()
+
+
+$lt:
+$gt:
+$lte:
+$gte:
+$ne:
+$in:
+$nin:
+$and:
+$or:
+
+db.employees.find({salary:{$in:{77000,69800}} }).pretty()
+
+db.employees.find({dep:{$in:["hr","finance"]}, salary:{$gt:50000}}).pretty()
+
+db.employees.find({name:"Aneesh",dep:"hr", loc:{$in:["kochin"]}}).pretty()
+
+db.employees.find({name:"A1",dep:"hr", loc:{$in:["Kochin","Trissur"]}}).pretty()
+
+db.employees.find({name:"A1", $or:[{loc:"Kochin"},{dep:"hr"}] }).pretty()
+
+db.employees.find({dep:"hr"}, {name:1,salary:1}).pretty()
+
+db.employees.find({dep:"hr"}, {name:1,salary:1,_id:0}).pretty()
+
+db.employees.find({}, {name:1,salary:1,dep:1,_id:0}).sort({salary:-1}).limit(1)
+
+db.employees.find({dep:"hr"}, {name:1,salary:1,_id:0}).sort({name:1})
+
+db.employees.find({name:/^A/}, {name:1,salary:1,_id:0})		==>begin with A
+
+db.employees.find({name:/A$/}, {name:1,salary:1,_id:0})		==>end with A
+
+db.employees.find({name:"/.*an.*/"}, {name:1,salary:1,_id:0})	==>any where with an
+
+db.employees.remove({name:"A1"})
+
+db.employees.update({name:"Rahul"}, {salary:30000})
+
+db.employees.update({name:"Manu"}, {$set:{salary:30000}})
+
+db.employees.update({}, {$set:{dob:new Date()}}, {multi:true})
+
+db.employees.update({name:"Jay"}, {$set:{eid:"0022", name:"Jay","dep" : "hr", dob:new Date()}}, {multi:true})

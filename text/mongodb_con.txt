@@ -1,0 +1,59 @@
+var express = require('express');
+const app = express();
+
+var mongodb = require("mongodb");
+var MongoClient = mongodb.MongoClient;
+var url = "mongodb://127.0.0.1:27017/testdb";
+
+app.set("view engine", "ejs");
+
+var bodyparser = require('body-parser');
+app.use(bodyparser.urlencoded({extended:true}))
+
+app.get("/",function(req,res){
+    res.render("home");
+})
+
+app.get("/insert",function(req,res){
+    MongoClient.connect(url,function(err,database){
+        var dtb = database.db('testdb');
+        var empcol = dtb.collection('employees');
+        var data = {eid:"2388", name:req.body.name, dep:"acc", salary:req.body.salary, loc:"Alpy"};
+
+        empcol.insert(data, function(err,result){
+            if(err){
+                res.send("Something Went Wrong!!");
+            }
+            else{
+                res.send("Data inserted successfully!!");
+            }
+        })
+    })
+})
+
+app.get("/view",function(req,res){
+    MongoClient.connect(url,function(err,result){
+        if(err){
+            res.send("Something Went Wrong!!");
+        }
+        else{
+            var dtb = database.db("testdb");
+            var empcol = dtb.collection("employees");
+            empcol.find({},function(err,tbdata){
+                if(err){
+                    res.send("Something Went Wrong!!");
+                    //console.log("Error");
+                }else{
+                    res.render('empview', data=tbdata);
+                    //res.send(tbdata);
+                    //console.log(tbdata);
+                }
+            })
+        }
+    })
+})
+
+
+app.listen(2255,function(req,res){
+    console.log("Server Ready");
+})

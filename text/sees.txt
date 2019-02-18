@@ -1,0 +1,26 @@
+   name1;
+  breed;
+  myJson:{};
+  mySessData;
+
+
+getData(){
+    this.mySessData = JSON.parse(sessionStorage.getItem("dog"));
+  }
+
+  setData(){
+    this.myJson = { "name":this.name1, "breed": this.breed };
+    sessionStorage.setItem("dog", JSON.stringify(this.myJson));
+    console.log("Session Storage For Dog");
+  }
+
+
+Name: <input type="text" [(ngModel)] = "name1" /><br>
+Breed: <input type="text" [(ngModel)] = "breed" /> <br>
+
+<input type="button" value="Set Data" (click) = "setData()" />
+<input type="button" value="Get Data" (click) = "getData()" /><br>
+<ul>
+  <li > {{mySessData.name}}</li>
+  <li > {{mySessData.breed}}</li>
+</ul>

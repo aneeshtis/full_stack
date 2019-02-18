@@ -1,0 +1,20 @@
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)] = "id" name="id" placeholder="Id">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)] = "name" name="name" placeholder="Name">
+        </div>
+
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)] = "author" name="author" placeholder="Author">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)] = "publisher" name="publisher" placeholder="Publisher">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)] = "price" name="price" placeholder="Price">
+        </div>
+        <input type="button" value="Save" (click) = "addBook()" />
+        <input type="button" value="Test" (click) = "test()" />
+      </div>
