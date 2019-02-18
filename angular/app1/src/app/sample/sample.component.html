@@ -1,0 +1,92 @@
+
+<h1>Sample Document</h1>
+<input type="text" name="name" [(ngModel)] = "name" />
+<input type="button" value="Change My Name" (click) = "setName()"><br>
+<ul>
+  <li>Name: {{ name }}</li>
+  <li>Age: {{ age }}</li>
+  <li>Email: {{ email }}</li>
+  <li>Address: {{ address.Street }} {{ address.City }}</li>
+</ul>
+
+<input type="text" name="hb" [(ngModel)] = "txtHobby" />
+<input type="button" value="Set Hobby" (click) = "setHobby()">
+<input type="button" value="Delete Hobby" (click) = "delHobby()"><br>
+<ul><h3>Hobbies</h3>
+  <input *ngIf="show1" type="button" value="Show Hobby" (click) = "showHobby()" />
+  <input *ngIf="show2" type="button" value="Hide Hobby" (click) = "hideHobby()" /><br>
+  <li *ngFor="let hb of hobbies; let i = index">
+    {{ i }} {{ hb }}
+    <input value="X" type="button" (click) = "removeOneHb(i)" />
+  </li>
+</ul>
+
+
+<table class="table table-stripped">
+    <caption>JSON Array</caption>
+  <tr>
+    <th>Sl.</th>
+    <th>Item</th>
+  </tr>
+  <tr *ngFor="let hb of hobbies; let i =index">
+    <td>{{ i }}</td>
+    <td>{{ hb }}</td>
+  </tr>
+</table>
+
+<table class="table table-stripped">
+    <caption> Array</caption>
+
+  <tr>
+    <th>Model</th>
+    <th>Cars</th>
+  </tr>
+  <tr *ngFor="let sj of sampleJson">
+    <td>{{ sj.id }}</td>
+    <td>{{ sj.cars }}</td>
+  </tr>
+</table>
+
+<input type="button" value="Add Hobby" (click) = "addHobby()" /><br>
+<input type="button" value="Remove Hobby" (click) = "removeHobby()" />
+
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+    <h5>Products</h5>
+      <table class="table table-stripped">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+          <td>Operation</td>
+        </tr>
+        <tr *ngFor="let pa of productArray">
+          <td>{{ pa.id }}</td>
+          <td>{{ pa.name }}</td>
+          <td>{{ pa.price }}</td>
+          <td><input type="button" value="Add To Cart" (click)="addCart(pa.name, pa.price)" ></td>
+        </tr>
+      </table>
+  </div>
+
+  <div class="col-md-6">
+      <h5>Cart</h5>
+      <table class="table table-stripped">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <td>Operation</td>
+          </tr>
+          <tr *ngFor="let pa of cartArray">
+            <td>{{ pa.Name }}</td>
+            <td>{{ pa.Price }}</td>
+            <td><input type="button" value="Remove Item" (click)="delCart(pa.name, pa.price)" ></td>
+          </tr>
+          <tr>
+              <td rowspan="2">Total: {{ total }}</td>
+          </tr>
+        </table>
+  </div>
+</div>
+</div>

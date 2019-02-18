@@ -1,0 +1,23 @@
+<h4>Cookie</h4>
+<br>{{ myCookie }}
+<input type="button" value="Get Cookie" (click) = "getCookie()" />
+<input type="button" value="Set Cookie" (click) = "setCookie()" />
+
+<h5>Local Storage</h5><br>{{ myLs }}<br>
+<input type="button" value="Set Ls" (click) = "setLs()" />
+<input type="button" value="Get Ls" (click) = "getLs()" />
+
+<h5>Session Storage</h5><br>{{ mySess }}<br>
+<input type="button" value="Set Session" (click) = "setSession()" />
+<input type="button" value="Get Session" (click) = "getSession()" /><br>
+
+Name: <input type="text" [(ngModel)] = "name1" /><br>
+Breed: <input type="text" [(ngModel)] = "breed" /> <br>
+
+<input type="button" value="Set Data" (click) = "setData()" />
+<input type="button" value="Get Data" (click) = "getData()" /><br>
+<ul>
+  <li > {{mySessData.name}}</li>
+  <li > {{mySessData.breed}}</li>
+</ul>
+
