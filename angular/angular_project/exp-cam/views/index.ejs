@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Camera</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Camera</h1>
+    <p>Welcome to </p>
+    <ul>
+      <li><a href="/addbook">Add Book</a></li>
+      <li><a href="/bookupdate">Edit Book</a></li>
+      <li><a href="/listbook">Remove Book</a></li>
+  </ul>
+  
+
+  <table class="table table-hover">
+    <tr>
+        <th>Sl no</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>author</th>
+        <th>Publisher</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Image</th>
+    </tr>
+    <% 
+        if(data.length){
+            for(var i = 0; i < data.length; i++){ %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].model_type %></td>
+                <td><%= data[i].color %></td>
+                <td><%= data[i].company %></td>
+                <td><%= data[i].price %></td>
+                <td><img src="images/<%= data[i].pic %>" width="300"  height="200"/></td>
+            </tr>
+    <%      } 
+        }else{ %>
+            <p>No Data Found</p>
+    <% } %>
+    </table>
+
+  </body>
+</html>
