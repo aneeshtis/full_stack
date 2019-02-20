@@ -1,0 +1,136 @@
+<script>
+    var newArr = [1,2];
+    var name = ["Jhn", "Mathew"];
+    var displayname = '';
+    function setName(){
+        for(var i = 0; i < newArr.length; i++){
+            for (var j = 0; j < name.length; j++) {
+                displayname += name[j];
+            }
+        }
+
+        document.getElementById('name').innerHTML = displayname;
+    }
+</script>
+
+<script>
+    function myFunction() {
+        alert("My Function is Called!!");
+    }
+</script>
+
+<script>
+    function submit() {
+        document.write(document.getElementById('userName').value);
+    }
+</script>
+
+<script>
+    document.write((110).toString(2) + "<br>");//binary value
+</script>
+<!-- <script src="test1.js"></script>
+<script src="test2.js"></script> -->
+<script>
+    function test1(){
+        var a = 1;
+        alert(a);
+        if(true){
+            var a;
+            alert(a);
+            a = 2;
+        }
+        alert(a);
+    }
+</script>
+<script>
+    var my_arr = [3, 16, 2, 18];
+    function myFunction1(elem){
+        return (elem + 5);
+    }
+    document.write(my_arr.map(myFunction1));
+    document.write("<br>");
+</script>
+
+<script>
+    var let_arr = ['J', 'A', 'V', 'A', 'S'];
+    for (let index = 0; index < let_arr.length; index++) {
+        for(let j = 0; j <= index; j++){
+            document.write(let_arr[j]);
+        }
+        document.write("<br>");
+    }
+    document.write("<br>");
+</script>
+<script>
+    document.write("<p>Truncated String:");
+    var length = 3;
+    var myString = "ABCDEFG";
+    var myTruncatedString = myString.substr(0,length)
+    document.write(myTruncatedString + "</p>");
+</script>
+<script>
+    var num_arr = [4,5,6,7];
+    var sum = 0
+    for (let index = 0; index < num_arr.length; index++) {
+        sum  += (num_arr[index] * num_arr[index]); 
+    }
+    document.write("<p>Sum of squares is: " + sum );
+</script>
+<script>
+    var my_str = "Aneesh Is A Programmer";
+    var new_str = '';
+    for (let index = 0; index < my_str.length; index++) {
+        if(my_str[index] === my_str[index].toUpperCase()){
+            new_str += my_str[index].toLowerCase();
+        }else{
+            new_str += my_str[index].toUpperCase();
+        }
+    }
+    document.write("<br>Old String: " + my_str + "<br>New String is: " + new_str);
+</script>
+<script>
+    var arr1=[3, 'a', 'a', 'a', 2, 3, 'b', 3, 'b', 2, 4, 9, 3];
+    var mf = 1;
+    var m = 0;
+    var item;
+    for(let i = 0; i< arr1.length; i++){
+        for (let index = i; index < arr1.length; index++) {
+            if(arr1[i] == arr1[index]){
+                m++;
+            }
+            if(mf<m){
+                mf = m;
+                item = arr1[i];
+            }
+        }
+        m = 0;
+    }
+    document.write("<br>Frequent Item :" + item + "(" + mf + ")");
+</script>
+<script>
+    var arr2 = ['x', 'a', 'y', 'd', 'b', 'f', 'i', 'n',];
+    // for (const key in arr2) {
+
+    // }
+    function getBulb(){
+        var bulb_img = document.getElementById('bulb').src;
+        var img_name = bulb_img.split('/');
+        bulb_img = img_name[img_name.length - 1];
+        if(bulb_img == "pic_bulboff.gif"){
+            document.getElementById('bulb').src = "pic_bulbon.gif";
+        }else{
+            document.getElementById('bulb').src = "pic_bulboff.gif";
+        }
+    }
+</script>
+<body><br>
+    <input type="button" onclick="setName()" value="Set Name" />
+    <p id="name"></p>
+    <img src="admin.png" width="100" onabort="myFunction()" /><br>
+    <input type="text" name="name" id="userName" />
+    <input type="button" value="submit" onclick="submit()" /><br>
+    <input type="button" value="Value Of a" onclick="test1()" /><br>
+    <img src="pic_bulboff.gif" style="cursor:pointer;" onclick="getBulb()" id="bulb" alt="No Image" /><br>
+    <input type="button" value="On" onclick="document.getElementById('bulb').src = 'pic_bulbon.gif';" /><span></span>
+    <input type="button" value="Off" onclick="document.getElementById('bulb').src = 'pic_bulboff.gif';" /><br>
+</body>
