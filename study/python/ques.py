@@ -27,3 +27,6 @@ data = Counter(myList)
 print(data.most_common(1)[0][0])
 print(max(myList, key = data.get))
 
+print("Ques Sample ===============")
+list = ['abcd', 786 , 2.23, 'john', 70.2]
+print(list[2:3])
