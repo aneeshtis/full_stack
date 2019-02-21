@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongo</title>
+</head>
+<body>
+    <p>
+    use databaseName <br>
+    db.dropDatabase()		=>Drop the database <br>
+    db.createCollection(name)	=>Create a collection <br>
+    show collections		=>Shows Collections <br>
+    db.employee.insert({eid:"e001", name:"An1"})<br>
+    db.employee.insertMany([{eid:"e001", name:"An1"}, {eid:"e001", name:"An1"}])<br>
+    db.collection_name.find()<br>
+    db.collection_name.find().pretty()<br>
+    <code>
+        $lt: <br>
+        $gt:<br>
+        $lte:<br>
+        $gte:<br>
+        $ne:<br>
+        $in:<br>
+        $nin:<br>
+        $and:<br>
+        $or:<br>
+    </code>
+
+    db.employees.find({salary:{$in:{77000,69800}} }).pretty()<br>
+
+    db.employees.find({dep:{$in:["hr","finance"]}, salary:{$gt:50000}}).pretty()<br>
+
+    db.employees.find({name:"Aneesh",dep:"hr", loc:{$in:["kochin"]}}).pretty()<br>
+
+    db.employees.find({name:"A1",dep:"hr", loc:{$in:["Kochin","Trissur"]}}).pretty()<br>
+
+    db.employees.find({name:"A1", $or:[{loc:"Kochin"},{dep:"hr"}] }).pretty()<br>
+
+    db.employees.find({dep:"hr"}, {name:1,salary:1}).pretty()<br>
+
+    db.employees.find({dep:"hr"}, {name:1,salary:1,_id:0}).pretty()<br>
+
+    db.employees.find({}, {name:1,salary:1,dep:1,_id:0}).sort({salary:-1}).limit(1)<br>
+
+    db.employees.find({dep:"hr"}, {name:1,salary:1,_id:0}).sort({name:1})<br>
+
+    db.employees.find({name:/^A/}, {name:1,salary:1,_id:0})		==>begin with A<br>
+
+    db.employees.find({name:/A$/}, {name:1,salary:1,_id:0})		==>end with A<br>
+
+    db.employees.find({name:"/.*an.*/"}, {name:1,salary:1,_id:0})	==>any where with an<br>
+
+    db.employees.remove({name:"A1"})<br>
+
+    db.employees.update({name:"Rahul"}, {salary:30000})<br>
+
+    db.employees.update({name:"Manu"}, {$set:{salary:30000}})<br>
+
+    db.employees.update({}, {$set:{dob:new Date()}}, {multi:true})<br>
+
+    db.employees.update({name:"Jay"}, {$set:{eid:"0022", name:"Jay","dep" : "hr", dob:new Date()}}, {multi:true})<br>
+    </p>
+</body>
+</html>
